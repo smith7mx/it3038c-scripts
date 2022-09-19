@@ -18,5 +18,6 @@ function getDate{
 Get-Date
 }
 $Date=(getDate)
-$BODY=("This machine's IP is $IP. User is $User. Hostname is $Host1. Powershell Version $Version. Today's Date is $Date.")
+$BODY=("This machine's IP is $IP. User is $User. Hostname is $Host1. 
+Powershell Version $Version. Today's Date is $Date.")
 $BODY | Out-File C:\it3038c-scripts\powershell\Lab3Script.txt
