@@ -1,5 +1,5 @@
 const http = require("http");
-const data = require("C:/Users/Administrator/Downloads/widgets (1).json");
+const data = require("C:/it3038c-scripts/node/widgets (1).json");
 const server = http.createServer((req, res) => {
     if (req.url === "/") {
       res.writeHead(200, {"Content-Type": "text/json"});
