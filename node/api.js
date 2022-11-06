@@ -1,11 +1,12 @@
 const http = require("http");
-const data = require("C:/Users/Administrator/Downloads/widgets.json");
+const data = require("C:/Users/Administrator/Downloads/widgets (1).json");
 const server = http.createServer((req, res) => {
     if (req.url === "/") {
       res.writeHead(200, {"Content-Type": "text/json"});
       res.end(JSON.stringify(data));
-    }
-    else {
+    } else if (req.url === "/blue") {
+      listBlue(res);
+    } else {
       res.writeHead(404, {"Content-Type": "text/plain"});
       res.end("Data not found");
     }
@@ -13,3 +14,11 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000);
 console.log("Server is listening on port 3000");
+
+const listBlue = (res) => {
+  const colorBlue = data.filter((item) => {
+    return item.color === "blue";
+  });
+
+  res.end(JSON.stringify(colorBlue));
+}
